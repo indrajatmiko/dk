@@ -3,6 +3,7 @@
 use App\Http\Controllers\SocialiteController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +42,10 @@ Route::post('logout', [SocialiteController::class, 'logout'])
 Route::get('auth/signin', function () {
         return view('auth/signin');
     })->name('signin');
+
+// HOMES
+Route::group(['namespace' => 'App\Http\Controllers'], function()
+{
+    Route::get('/home', 'HomeController@index')->name('homes.index');
+    Route::get('/about', 'HomeController@about')->name('homes.about');
+});
