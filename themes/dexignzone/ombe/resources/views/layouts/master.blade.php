@@ -47,7 +47,7 @@
 		<main class="page-content bg-white p-b60">
 			<div class="container">
 
-                @include('partials.search')
+                {{-- @include('partials.search') --}}
 
 				<!-- Overlay Card -->
 				@yield('content')

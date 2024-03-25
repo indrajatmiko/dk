@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\SocialiteController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\SocialiteController;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +14,6 @@ use App\Http\Controllers\HomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 // Untuk menampilkan halaman
 Route::get('/', function () {
@@ -44,8 +40,25 @@ Route::get('auth/signin', function () {
     })->name('signin');
 
 // HOMES
-Route::group(['namespace' => 'App\Http\Controllers'], function()
-{
-    Route::get('/home', 'HomeController@index')->name('homes.index');
-    Route::get('/about', 'HomeController@about')->name('homes.about');
+Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome.index');
+
+Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['auth']], function () {
+    Route::get('/home', 'HomeController@index')->name('home.index');
+    Route::get('/profile', 'HomeController@profile')->name('home.profile');
+    Route::get('/wishlist', 'HomeController@profile')->name('home.wishlist');
+
+    Route::get('/cart', 'HomeController@cart')->name('home.cart');
+    Route::post('/cartAdd', 'HomeController@cartAdd')->name('home.cartAdd');
+    Route::get('/cartRemove/{idProduk}', 'HomeController@cartRemove')->name('home.cartRemove');
+    Route::post('/cartUpdate', 'HomeController@cartUpdate')->name('home.cartUpdate');
+    Route::get('/cartCoupon', 'HomeController@cartCoupon')->name('home.cartCoupon');
+
+    Route::get('/produk/{idProduk}', 'HomeController@produk')->name('home.produk');
+
+    Route::get('/reseller/{idWilayah}', 'HomeController@reseller')->name('home.reseller');
+    Route::get('/resellerSet/{idReseller}', 'HomeController@resellerSet')->name('home.resellerSet');
+
+    Route::get('/addAddress', 'HomeController@addAddress')->name('home.addAddress');
+
+    Route::get('/news', 'HomeController@news')->name('home.news');
 });

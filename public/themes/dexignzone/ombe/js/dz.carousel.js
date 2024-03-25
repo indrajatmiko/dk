@@ -11,7 +11,7 @@
 /* JavaScript Document */
 jQuery(document).ready(function() {
     'use strict';
-	
+
     // Get Started ==========
 	if(jQuery('.get-started').length > 0){
 		var swiperGetStarted = new Swiper(".get-started", {
@@ -30,7 +30,7 @@ jQuery(document).ready(function() {
 			},
 		});
 	}
-	
+
 	// Overlay Swiper ===
 	if(jQuery('.overlay-swiper1').length > 0){
 		var swiper = new Swiper('.overlay-swiper1', {
@@ -50,7 +50,7 @@ jQuery(document).ready(function() {
 			speed: 1500,
 			spaceBetween: 18,
 			slidesPerView: "auto",
-			loop:true,
+			loop:false,
 			// autoplay: {
 			// 	delay: 2500,
 			// },
@@ -86,7 +86,7 @@ jQuery(document).ready(function() {
 		});
 	}
 
-	
+
 	if(jQuery('.location-swiper').length > 0){
 		var locationSwiper = new Swiper('.location-swiper', {
 			speed: 300,

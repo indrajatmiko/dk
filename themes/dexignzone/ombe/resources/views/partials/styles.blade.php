@@ -2,16 +2,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
 
 	<!-- Favicons Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="{!! theme_asset('img/app-logo/favicon.png') !!}">
+	<link rel="shortcut icon" type="image/x-icon" href="{!! theme_asset('img/app-logo/favicon.webp') !!}">
 
 	<!-- PWA Version -->
 	<link rel="manifest" href="{!! theme_asset('manifest.json') !!}">
 
     <!-- Global CSS -->
 	<link href="{!! theme_asset('vendor/bootstrap-select/dist/css/bootstrap-select.min.css') !!}" rel="stylesheet">
-	<link href="{!! theme_asset('vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css') !!}" rel="stylesheet">
 	<link href="{!! theme_asset('vendor/swiper/swiper-bundle.min.css') !!}" rel="stylesheet">
 
+    @if(request()->segment(1) === 'produk')
+	    <link href="{!! theme_asset('vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css') !!}" rel="stylesheet">
+
+    @endif
 	<!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="{!! theme_asset('css/style.css') !!}">
 

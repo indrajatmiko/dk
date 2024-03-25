@@ -163,6 +163,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        LukePOLO\LaraCart\LaraCartServiceProvider::class,
+        Irfa\RajaOngkir\RajaOngkirServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -192,6 +194,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // ...
+        'LaraCart' => LukePOLO\LaraCart\Facades\LaraCart::class,
+        'RajaOngkir' => Irfa\RajaOngkir\Facades\Ongkir::class,
     ])->toArray(),
 
 ];

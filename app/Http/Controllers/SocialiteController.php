@@ -37,14 +37,14 @@ class SocialiteController extends Controller
             auth('web')->login($newUser);
             session()->regenerate();
 
-            return redirect('/');
+            return redirect('/home');
         }
 
         // Jika ada user langsung login saja
         auth('web')->login($userFromDatabase);
         session()->regenerate();
 
-        return redirect('/');
+        return redirect('/home');
     }
 
     public function logout(Request $request)
@@ -53,6 +53,6 @@ class SocialiteController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/welcome');
     }
 }
