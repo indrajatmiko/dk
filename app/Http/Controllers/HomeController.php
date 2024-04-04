@@ -93,7 +93,7 @@ class HomeController extends Controller
             ->join("ro_subdistricts", function($join){
                 $join->on("ro_subdistricts.subdistrict_id", "=", "cust_address.idsubdistrict");
             })
-            ->select("cust_address.iduser", "cust_address.nama", "cust_address.nowa", "cust_address.alamat", "cust_address.kelurahan", "cust_address.label", "ro_city.province", "ro_city.type", "ro_city.city_name", "ro_city.postal_code", "ro_subdistricts.subdistrict_name")
+            ->select("cust_address.iduser", "cust_address.nama", "cust_address.noWa", "cust_address.alamat", "cust_address.kelurahan", "cust_address.label", "ro_city.province", "ro_city.type", "ro_city.city_name", "ro_city.postal_code", "ro_subdistricts.subdistrict_name")
             ->where("cust_address.label", "=", "rumah")
             ->where("cust_address.iduser", "=", auth('web')->user()->id)
             ->first();
@@ -122,7 +122,7 @@ class HomeController extends Controller
                 ->join("ro_subdistricts", function($join){
                     $join->on("ro_subdistricts.subdistrict_id", "=", "cust_address.idsubdistrict");
                 })
-                ->select("cust_address.id", "cust_address.iduser", "cust_address.nama", "cust_address.nowa", "cust_address.alamat", "cust_address.kelurahan", "cust_address.label", "ro_city.province", "ro_city.type", "ro_city.city_name", "ro_city.postal_code", "ro_subdistricts.subdistrict_name")
+                ->select("cust_address.id", "cust_address.iduser", "cust_address.nama", "cust_address.noWa", "cust_address.alamat", "cust_address.kelurahan", "cust_address.label", "ro_city.province", "ro_city.type", "ro_city.city_name", "ro_city.postal_code", "ro_subdistricts.subdistrict_name")
                 ->where("cust_address.id", "=", $idAlamatCust)
                 ->first();
         }
@@ -251,7 +251,7 @@ class HomeController extends Controller
                 ->join("ro_subdistricts", function($join){
                     $join->on("ro_subdistricts.subdistrict_id", "=", "cust_address.idsubdistrict");
                 })
-                ->select("cust_address.id", "cust_address.iduser", "cust_address.nama", "cust_address.nowa", "cust_address.alamat", "cust_address.kelurahan", "cust_address.label", "ro_city.province", "ro_city.type", "ro_city.city_name", "ro_city.postal_code", "ro_subdistricts.subdistrict_name", "cust_address.idCity")
+                ->select("cust_address.id", "cust_address.iduser", "cust_address.nama", "cust_address.noWa", "cust_address.alamat", "cust_address.kelurahan", "cust_address.label", "ro_city.province", "ro_city.type", "ro_city.city_name", "ro_city.postal_code", "ro_subdistricts.subdistrict_name", "cust_address.idCity")
                 ->where("cust_address.id", "=", $idAlamatCust)
                 ->first();
         }

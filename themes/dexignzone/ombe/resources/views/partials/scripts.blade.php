@@ -23,7 +23,7 @@
             var provinceId = $(this).val();
             if (provinceId) {
                 $.ajax({
-                    url: '/getCities/' + provinceId,
+                    url: 'https://distributorkauniyah.com/my/public/getCities/' + provinceId,
                     type: 'GET' ,
                     dataType: 'json',
                     success: function(data) {
@@ -49,7 +49,7 @@
             var citiesId = $(this).val();
             if (citiesId) {
                 $.ajax({
-                    url: '/getSubdistricts/' + citiesId,
+                    url: 'https://distributorkauniyah.com/my/public/getSubdistricts/' + citiesId,
                     type: 'GET' ,
                     dataType: 'json',
                     success: function(data) {

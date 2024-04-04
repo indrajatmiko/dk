@@ -67,10 +67,10 @@
                 <div class="dz-card list style-4">
                     <img style="width: 32px" src="{!! theme_asset('img/discount-128.webp') !!}" alt="">
                     <div class="dz-content ms-2">
-                        <h6 class="title"><a href="/cartCoupon">{{ $kupon['code'] }}</a></h6>
+                        <h6 class="title"><a href="{{ route('home.cartCoupon') }}">{{ $kupon['code'] }}</a></h6>
                         <ul class="dz-meta">
                             <li class="category flex-1">{{ $kupon['options']['description'] }}</li>
-                            <li><a href="/cartCoupon">KLAIM</a></li>
+                            <li><a href="{{ route('home.cartCoupon') }}">KLAIM</a></li>
                         </ul>
                     </div>
                 </div>

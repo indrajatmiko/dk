@@ -11,7 +11,7 @@
 				<ul id="myList">
                     @foreach($resellers as $resel)
                         <li>
-                            <a href="/resellerSet/{{ $resel->id }}" class="list-items">
+                            <a href="{{ route('home.resellerSet', $resel->id) }}" class="list-items">
                                 <div class="dz-media">
                                     <img src="{!! theme_asset('img/avatar/1.jpg') !!}" alt="">
                                 </div>

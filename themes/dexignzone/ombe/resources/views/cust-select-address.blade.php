@@ -28,7 +28,7 @@
                                     <div class="dz-icon style-2 icon-fill"><i class="fi fi-rr-{{ $label }} font-20"></i></div>
                                     <div class="list-content">
                                         <h6 class="title">{{ $addr->nama }} ({{ $addr->label }})</h6>
-                                        <p class="active-status">{{ $addr->nowa }}<br/>{{ $addr->alamat }}, Kel. {{ $addr->kelurahan }}, kec. {{ $addr->subdistrict_name }}, {{ $addr->type }} {{ $addr->city_name }}, {{ $addr->province }}</p>
+                                        <p class="active-status">{{ $addr->noWa }}<br/>{{ $addr->alamat }}, Kel. {{ $addr->kelurahan }}, kec. {{ $addr->subdistrict_name }}, {{ $addr->type }} {{ $addr->city_name }}, {{ $addr->province }}</p>
                                     </div>
                                     <span class="check"></span>
                                 </div>
