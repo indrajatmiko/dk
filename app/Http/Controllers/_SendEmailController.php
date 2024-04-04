@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Jobs\SendMailJob;
+use Illuminate\Http\Request;
+
+class SendEmailController extends Controller
+{
+    public function index()
+    {
+        return view('kirim-email');
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->all();
+
+        dispatch(new SendMailJob($data));
+        return redirect()->route('kirim-email')->with('status', 'Email berhasil dikirim');
+    }
+
+    public function kirim_email()
+    {
+        $data = [
+            'name'=> 'Indra',
+            'email' => 'indrajatmiko@gmail.com',
+            'body' => 'Test email'
+        ];
+
+        // $data['name'] = 'indrajatmiko';
+        // $data['email'] = 'indrajatmiko@gmail.com';
+        // $data['body'] = 'Tes ';
+
+
+        dispatch(new SendMailJob($data));
+        return redirect()->route('home.index')->with('status', 'Email berhasil dikirim');
+
+    }
+}

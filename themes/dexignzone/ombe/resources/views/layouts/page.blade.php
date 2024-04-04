@@ -3,7 +3,7 @@
 <head>
 
 	<!-- Title -->
-	<title>Ombe- Coffee Shop Mobile App Template (Bootstrap + PWA) | DexignZone</title>
+	<title>DK - Distributor Resmi Kauniyah Oil & Kauniyah Natural Skincare</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">

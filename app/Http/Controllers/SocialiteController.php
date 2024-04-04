@@ -25,7 +25,7 @@ class SocialiteController extends Controller
         // Jika tidak ada user, maka buat user baru
         if (!$userFromDatabase) {
             $newUser = new User([
-                'google_id' => $userFromGoogle->getId(),
+                // 'google_id' => $userFromGoogle->getId(),
                 'name' => $userFromGoogle->getName(),
                 'email' => $userFromGoogle->getEmail(),
                 'avatar' => $userFromGoogle->getAvatar(),
@@ -53,6 +53,6 @@ class SocialiteController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/welcome');
+        return redirect('/home');
     }
 }

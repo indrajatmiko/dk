@@ -26,8 +26,8 @@
 								</svg>
 							</div>
 							<div class="dz-content">
-								<p class="sub-title">Mobile Phone</p>
-								<h6 class="title">+12 345 678 92</h6>
+								<p class="sub-title">No. Whatsapp</p>
+								<h6 class="title">+62{{ $addr->nowa }}</h6>
 							</div>
 						</li>
 						<li>
@@ -37,7 +37,7 @@
 								</svg>
 							</div>
 							<div class="dz-content">
-								<p class="sub-title">Email Address</p>
+								<p class="sub-title">Email</p>
 								<h6 class="title">{{ auth('web')->user()->email }}</h6>
 							</div>
 						</li>
@@ -49,8 +49,8 @@
 								</svg>
 							</div>
 							<div class="dz-content">
-								<p class="sub-title">Address</p>
-								<h6 class="title">Franklin Avenue, Corner St. London, 24125151</h6>
+								<p class="sub-title">Alamat Rumah</p>
+								<h6 class="title">{{ $addr->alamat }}, Kel. {{ $addr->kelurahan }}, Kec. {{ $addr->subdistrict_name }}, {{ $addr->type }} {{ $addr->city_name }}, {{ $addr->province }}</h6>
 							</div>
 						</li>
 					</ul>
