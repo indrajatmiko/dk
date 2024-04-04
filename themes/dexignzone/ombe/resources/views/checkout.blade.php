@@ -15,7 +15,7 @@
 								<div class="list-content">
 									<h6 class="title">Penerima</h6>
 									<p class="active-status">{{ $addrSend->nama }} ({{ $addrSend->label }})<br>
-                                        No. WA : {{ $addrSend->nowa }}
+                                        No. WA : {{ $addrSend->noWa }}
                                     </p>
 								</div>
 							</a>

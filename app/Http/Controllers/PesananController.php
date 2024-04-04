@@ -69,7 +69,7 @@ class PesananController extends Controller
                 'diskon' => '0',
                 'waktu_cetak' => '2000-01-01',
                 'nama_produk' => $item->name,
-                'no_hp' => $addrSend->nowa,
+                'no_hp' => $addrSend->noWa,
                 'id_user' => auth('web')->user()->id,
                 'ongkir' => $hargaOngkir,
                 'origin' => $sesKotaKab,
