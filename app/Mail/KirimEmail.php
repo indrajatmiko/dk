@@ -3,11 +3,12 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Mail\Mailables\Attachment;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class KirimEmail extends Mailable implements ShouldQueue
 {
@@ -18,10 +19,7 @@ class KirimEmail extends Mailable implements ShouldQueue
      *
      * @return void
      */
-    public function __construct()
-    {
-        //
-    }
+    public function __construct(private $name){ }
 
     /**
      * Get the message envelope.
@@ -31,7 +29,7 @@ class KirimEmail extends Mailable implements ShouldQueue
     public function envelope()
     {
         return new Envelope(
-            subject: 'Kirim Email',
+            subject: 'My Test Email',
         );
     }
 
@@ -44,6 +42,7 @@ class KirimEmail extends Mailable implements ShouldQueue
     {
         return new Content(
             view: 'kirim-email',
+            with: ['name' => $this->name],
         );
     }
 
@@ -54,6 +53,9 @@ class KirimEmail extends Mailable implements ShouldQueue
      */
     public function attachments()
     {
-        return [];
+        return [
+            // Attachment::fromPath($this->attachedFile),
+        ];
+
     }
 }

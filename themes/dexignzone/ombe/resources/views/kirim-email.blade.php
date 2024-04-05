@@ -1,5 +1,3 @@
-// resources/views/mail/test-email.blade.php
-
 <!doctype html>
 <html lang="en">
 <head>
