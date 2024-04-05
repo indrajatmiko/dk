@@ -12,7 +12,7 @@
 						<div class="swiper-slide">
                             @foreach($fotos as $foto)
                                 <div class="dz-media">
-                                    <img src="{{  env('DK_ADMIN') }}uploads/{{ $foto->foto_1 }}" alt="">
+                                    <img src="/uploads/{{ $foto->foto_2 }}" alt="">
                                 </div>
                             @endforeach
 						</div>
