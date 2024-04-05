@@ -12,7 +12,7 @@
 						<div class="swiper-slide">
                             @foreach($fotos as $foto)
                                 <div class="dz-media">
-                                    <img src="/uploads/{{ $foto->foto_2 }}" alt="">
+                                    <img src="{{asset('uploads')}}/{{$foto->foto_2}}" alt="">
                                 </div>
                             @endforeach
 						</div>
