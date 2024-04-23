@@ -57,11 +57,11 @@
 				</a>
 			</li>
 			<li>
-				<a class="nav-link" href="chat-list.html">
+				<a class="nav-link" href="javascript:void(Tawk_API.toggle());">
 					<span class="dz-icon">
 						<i class="feather icon-message-circle"></i>
 					</span>
-					<span>Chat List</span>
+					<span>Chat</span>
 				</a>
 			</li>
 			<li>
@@ -106,7 +106,7 @@
 				</div>
 			</div>
 			<div class="app-info">
-				<h6 class="name">Ombe Coffee Shop</h6>
+				<h6 class="name">DK</h6>
 				<span class="ver-info">App Version 1.0.0</span>
 			</div>
         </div>

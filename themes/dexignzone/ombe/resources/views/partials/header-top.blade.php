@@ -4,7 +4,7 @@
             <div class="left-content">
                 <div class="info">
                     <p class="text m-b10">Assalamualaikum</p>
-                    <h3 class="title">{{ auth('web')->user()->name ?? 'Pelanggan'}}</h3>
+                    <h4 class="title">{{ auth('web')->user()->name ?? 'Pelanggan'}}</h4>
                 </div>
             </div>
             <div class="mid-content"></div>

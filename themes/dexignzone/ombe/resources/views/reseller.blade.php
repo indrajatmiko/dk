@@ -16,7 +16,7 @@
                                     <img src="{!! theme_asset('img/avatar/1.jpg') !!}" alt="">
                                 </div>
                                 <div class="list-content">
-                                    <h6 class="title">{{ $resel->nama }}</h6>
+                                    <h6 class="title"><span class="text-primary">{{ $resel->nama }}</span></h6>
                                     <span class="dz-text">ID Reseller : {{ $resel->idReseller }}</span>
                                     <div class="dz-status">
                                         <span class="item-time"><i class="fa fa-location-dot"></i> {{ $resel->kotaKab }}, {{ $resel->kecamatan }}</span>

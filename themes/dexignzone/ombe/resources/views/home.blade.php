@@ -12,7 +12,7 @@
                 </div>
                 <div class="dz-info">
                     <div class="dz-head">
-                        <h6 class="title"><a href="#">{{ $sesNamaReseller }}</a></h6>
+                        <h6 class="title"><a class="text-primary" href="#">{{ $sesNamaReseller }}</a></h6>
                         <p>Saya akan membantu menjawab pertanyaan, konsultasi produk & pengiriman produk Anda.</p>
                     </div>
                     <div class="dz-status">
@@ -53,8 +53,8 @@
         <div class="swiper-slide">
             <div class="dz-categories-bx">
                 <div class="dz-content">
-                        <h6 class="title"><a href="{{ $linkWilayah }}">{{ $wil->nama }}</a></h6>
-                        <span class="menus text-primary">{{ $countResel }}</span>
+                        <h6 class="title"><a class="text-primary" href="{{ $linkWilayah }}">{{ $wil->nama }}</a></h6>
+                        <span class="menus ">{{ $countResel }}</span>
                     </div>
                 </div>
             </div>

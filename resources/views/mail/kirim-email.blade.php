@@ -7,7 +7,7 @@
     <div>
         <p>Hey Indra,</p>
         <p>Can your Laravel app send emails yet? 😉</p>
-        <img src="{{ $message->embed(theme_asset('img/app-logo/logo-dk-panjang-kecil.webp')) }}" alt="Logo">
+        <img src="{{ $message->embed(asset('assets/images/logo-dk-panjang-kecil.webp')) }}" alt="Logo">
     </div>
 </body>
 </html>

@@ -41,7 +41,7 @@ class KirimEmail extends Mailable implements ShouldQueue
     public function content()
     {
         return new Content(
-            view: 'kirim-email',
+            view: 'mail.kirim-email',
             with: ['name' => $this->name],
         );
     }
