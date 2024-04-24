@@ -6,6 +6,8 @@
 <body>
     <div>
         <p>Hey Indra,</p>
+        {{ $data['total'] }}
+
         <p>Can your Laravel app send emails yet? 😉</p>
         <img src="{{ $message->embed(asset('assets/images/logo-dk-panjang-kecil.webp')) }}" alt="Logo">
     </div>

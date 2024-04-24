@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Mail;
+use Illuminate\Support\Facades\Session;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
@@ -19,7 +20,14 @@ class KirimEmail extends Mailable implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(private $name){ }
+
+    protected $judul;
+    protected $data;
+
+    public function __construct($judul, $data){
+        $this->judul = $judul;
+        $this->data = $data;
+    }
 
     /**
      * Get the message envelope.
@@ -29,7 +37,8 @@ class KirimEmail extends Mailable implements ShouldQueue
     public function envelope()
     {
         return new Envelope(
-            subject: 'My Test Email',
+            subject: $this->judul,
+            bcc: ['distributorkauniyah@gmail.com'],
         );
     }
 
@@ -42,7 +51,10 @@ class KirimEmail extends Mailable implements ShouldQueue
     {
         return new Content(
             view: 'mail.kirim-email',
-            with: ['name' => $this->name],
+            with: [
+                'data' => $this->data,
+
+            ],
         );
     }
 

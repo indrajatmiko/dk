@@ -5,6 +5,7 @@ use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CustAddressController;
+use App\Http\Controllers\PesananController;
 use App\Mail\KirimEmail;
 use Illuminate\Support\Facades\Mail;
 /*
@@ -86,6 +87,8 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['auth']], 
 
     Route::post('/pesananStore', 'PesananController@store')->name('pesanan.store');
     Route::get('/myOrder', 'PesananController@myOrder')->name('pesanan.myOrder');
+
+    Route::get('/tesEmail', 'PesananController@tesEmail')->name('pesanan.email');
 
     Route::get('/news', 'HomeController@news')->name('home.news');
 });

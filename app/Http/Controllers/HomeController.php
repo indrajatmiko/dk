@@ -314,6 +314,7 @@ class HomeController extends Controller
 
         return redirect('checkout');
     }
+
     public function news()
     {
         $pageTitle = 'Berita Terbaru';

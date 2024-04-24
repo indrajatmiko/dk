@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use LukePOLO\LaraCart\Facades\LaraCart;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\KirimEmail;
 
 use App\Models\Wilayah;
 use App\Models\Reseller;
@@ -19,6 +21,9 @@ class PesananController extends Controller
 {
 
     public function store(Request $request) {
+        $user_name = auth('web')->user()->name;
+        $user_email = auth('web')->user()->email;
+
         $sesIdReseller = session('idReseller');
         $sesNamaReseller = session('namaReseller');
         $sesKotaKab = session('kotaKab');
@@ -85,6 +90,7 @@ class PesananController extends Controller
         LaraCart::destroyCart();
         $request->session()->forget(['bankPayment', 'jenisOngkir', 'hargaOngkir', 'beratPaket', 'idAlamatCust']);
 
+        Mail::to($user_name)->send(new KirimEmail($user_name));
         return redirect('home');
 
     }
@@ -129,5 +135,18 @@ class PesananController extends Controller
 
         return view('my-order', compact('pageTitle', 'pesanans'));
 
+    }
+
+    public function tesEmail(){
+        $user_name = auth('web')->user()->name;
+        $user_email = auth('web')->user()->email;
+        $judul = 'Pesanan Baru! No. 41516828';
+        $data = [
+            'pesanan' => 'A1234',
+            'total' => 'Rp. 10.000',
+            'Pengiriman' => 'JNT',
+        ];
+
+        Mail::to($user_email)->send(new KirimEmail($judul, $data));
     }
 }
