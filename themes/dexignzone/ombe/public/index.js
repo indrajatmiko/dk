@@ -3,7 +3,7 @@ if ('serviceWorker' in navigator) {
 	navigator.serviceWorker.register('app.js')
 	.then(() => { console.log('Service Worker Registered'); });
 }
-  
+
 // Code to handle install prompt on desktop
 let deferredPrompt;
 const pwaBtn = document.querySelector('.pwa-btn');
@@ -14,8 +14,8 @@ var PwaValue = getCookie(PwaKey);
 
 /* for ios start*/
 function isThisDeviceRunningiOS(){
-  if (['iPad Simulator', 'iPhone Simulator','iPod Simulator', 'iPad','iPhone','iPod','ios'].includes(navigator.platform) || navigator.userAgent.indexOf('Mac OS X') != -1){ 
-	installText.innerHTML = 'Install "Ombe - Coffee Shop Mobile App Template" to your home screen for easy access click to safari share option "Add to Home Screen".';
+  if (['iPad Simulator', 'iPhone Simulator','iPod Simulator', 'iPad','iPhone','iPod','ios'].includes(navigator.platform) || navigator.userAgent.indexOf('Mac OS X') != -1){
+	installText.innerHTML = 'Install "DK - Distributor Kauniyah Oil & Kauniyah Natural Skincare" di layar HP untuk memudahkan akses dan pemesanan. Pilih Add to Home Screen';
 	pwaBtn.remove();
 	return true;
   }
@@ -24,13 +24,13 @@ isThisDeviceRunningiOS();
 /* for ios end */
 
 window.addEventListener('beforeinstallprompt', (e) => {
-	
+
 	// Prevent Chrome 67 and earlier from automatically showing the prompt
 	e.preventDefault();
-	
+
 	// Stash the event so it can be triggered later.
 	deferredPrompt = e;
-	
+
 	// Update UI to notify the user they can add to home screen
 	//pwaBtn.style.display = 'block';
 	if(!PwaValue)
@@ -39,14 +39,14 @@ window.addEventListener('beforeinstallprompt', (e) => {
 			jQuery('.dz-pwa-modal').modal("show");
 		}, 3000);
 	}
-	
+
 	pwaBtn.addEventListener('click', () => {
 		// hide our user interface that shows our A2HS button
 		//pwaBtn.style.display = 'none';
-		
+
 		// Show the prompt
 		deferredPrompt.prompt();
-		
+
 		// Wait for the user to respond to the prompt
 		deferredPrompt.userChoice.then((choiceResult) => {
 			if (choiceResult.outcome === 'accepted') {
@@ -55,22 +55,22 @@ window.addEventListener('beforeinstallprompt', (e) => {
 			deferredPrompt = null;
 		});
 	});
-	
+
 });
 
 jQuery(document).ready(function() {
-    
+
 	// PWA
 	jQuery('.pwa-btn').on('click',function(){
-		jQuery('.dz-pwa-modal').modal('hide');	
+		jQuery('.dz-pwa-modal').modal('hide');
 		setCookie(PwaKey, true);
 	});
-	
+
 	// PWA Display Mode Standalone
 	if (!window.matchMedia('(display-mode: standalone)').matches) {
 		setTimeout(function(){
 			jQuery('.dz-pwa-modal').modal("show");
 		}, 3000);
 	}
-	
+
 });

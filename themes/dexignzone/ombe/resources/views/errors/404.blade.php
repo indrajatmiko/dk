@@ -8,24 +8,24 @@
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="author" content="DexignZone">
+	<meta name="author" content="DistributorKauniyah">
 	<meta name="robots" content="index, follow">
 
-	<meta name="keywords" content="android, ios, mobile, mobile template, mobile app, ui kit, dark layout, app, delivery, ecommerce, material design, mobile, mobile web, order, phonegap, pwa, store, web app, Ombe, coffee app, coffee template, coffee shop, mobile UI, coffee design, app template, responsive design, coffee showcase, style app, trendy app, modern UI, technology, User-Friendly Interface, Coffee Shop App, PWA (Progressive Web App), Mobile Ordering, Coffee Experience, Digital Menu, Innovative Technology, App Development, Coffee Experience, cafe, bootatrap, Bootstrap Framework, UI/UX Design, Coffee Shop Technology, Online Presence, Coffee Shop Website, Cafe Template, Mobile App Design, Web Application, Digital Presence, ">
+	<meta name="keywords" content="kauniyah, kauniyah oil, kauniyah natural, kauniyah natural skincare, kauniyah skincare, kauniyah natural tsubaki hydrofirm facial wash, kauniyah natural bright glow 2 in 1 face mist toner, kauniyah natural tsubaki glow face ampoule, kauniyah natural tsubaki anti aging face oil, kauniyah natural sunscreen brightmoist daily lotion, kauniyah natural brightsilk natural deodorant, kauniyah facial wash, kauniyah toner, kauniyah ampoule, kauniyah face oil, kauniyah sunscreen, kauniyah deodorant, distributor kauniyah, reseller resmi, testimoni kauniyah">
 
-	<meta name="description" content="Discover the perfect blend of design and functionality with Ombe, a Coffee Shop Mobile App Template crafted with Bootstrap and enhanced with Progressive Web App (PWA) capabilities. Elevate your coffee shop's online presence with a seamless, responsive, and feature-rich template. Explore a modern design, user-friendly interface, and PWA technology for an immersive mobile experience. Brew success for your coffee shop effortlessly – Ombe is the ideal template to caffeinate your digital presence.">
+	<meta name="description" content="DK atau Distributor Kauniyah adalah Distributor Resmi dari Produk Kauniyah Oil dan Kauniyah Natural Skincare, menerima pendaftaran Reseller dan penjualan langsung ke customer. Jaminan Produk Original, Asli serta transaksi yang aman dan pengiriman yang cepat.">
 
-	<meta property="og:title" content="Ombe- Coffee Shop Mobile App Template (Bootstrap + PWA) | DexignZone">
-	<meta property="og:description" content="Discover the perfect blend of design and functionality with Ombe, a Coffee Shop Mobile App Template crafted with Bootstrap and enhanced with Progressive Web App (PWA) capabilities. Elevate your coffee shop's online presence with a seamless, responsive, and feature-rich template. Explore a modern design, user-friendly interface, and PWA technology for an immersive mobile experience. Brew success for your coffee shop effortlessly – Ombe is the ideal template to caffeinate your digital presence.">
+	<meta property="og:title" content="DK -Distributor Resmi Kauniyah Oil dan Kauniyah Natural Skincare">
+	<meta property="og:description" content="DK atau Distributor Kauniyah adalah Distributor Resmi dari Produk Kauniyah Oil dan Kauniyah Natural Skincare, menerima pendaftaran Reseller dan penjualan langsung ke customer di seluruh indonesia. Jaminan Produk Original, Asli serta transaksi yang aman dan pengiriman yang cepat.">
 
-	<meta property="og:image" content="../../xhtml/social-image.png">
+	<meta property="og:image" content="{!! theme_asset('img/social-image.png') !!}">
 
 	<meta name="format-detection" content="telephone=no">
 
-	<meta name="twitter:title" content="Ombe- Coffee Shop Mobile App Template (Bootstrap + PWA) | DexignZone">
-	<meta name="twitter:description" content="Discover the perfect blend of design and functionality with Ombe, a Coffee Shop Mobile App Template crafted with Bootstrap and enhanced with Progressive Web App (PWA) capabilities. Elevate your coffee shop's online presence with a seamless, responsive, and feature-rich template. Explore a modern design, user-friendly interface, and PWA technology for an immersive mobile experience. Brew success for your coffee shop effortlessly – Ombe is the ideal template to caffeinate your digital presence.">
+	<meta name="twitter:title" content="DK -Distributor Resmi Kauniyah Oil dan Kauniyah Natural Skincare">
+	<meta name="twitter:description" content="DK atau Distributor Kauniyah adalah Distributor Resmi dari Produk Kauniyah Oil dan Kauniyah Natural Skincare, menerima pendaftaran Reseller dan penjualan langsung ke customer di seluruh indonesia. Jaminan Produk Original, Asli serta transaksi yang aman dan pengiriman yang cepat.">
 
-	<meta name="twitter:image" content="../../xhtml/social-image.png">
+	<meta name="twitter:image" content="{!! theme_asset('img/social-image.png') !!}">
 	<meta name="twitter:card" content="summary_large_image">
 
 	<!-- Mobile Specific -->
