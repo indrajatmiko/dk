@@ -50,7 +50,11 @@
 							</div>
 							<div class="dz-content">
 								<p class="sub-title">Alamat Rumah</p>
-								<h6 class="title">{{ $addr->alamat }}, Kel. {{ $addr->kelurahan }}, Kec. {{ $addr->subdistrict_name }}, {{ $addr->type }} {{ $addr->city_name }}, {{ $addr->province }}</h6>
+                                @if(empty($addr->alamat))
+                                    <h6 class="title">belum ada alamat</h6>
+                                @else
+                                    <h6 class="title">{{ $addr->alamat }}, Kel. {{ $addr->kelurahan }}, Kec. {{ $addr->subdistrict_name }}, {{ $addr->type }} {{ $addr->city_name }}, {{ $addr->province }}</h6>
+                                @endif
 							</div>
 						</li>
 					</ul>
