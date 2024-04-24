@@ -3,7 +3,7 @@
 <head>
 
 	<!-- Title -->
-	<title>DK - Distributor Resmi Kauniyah Oil & Kauniyah Natural Skincare</title>
+	<title>{{$pageTitle ?? 'Home'}} - Distributor Resmi Kauniyah Oil & Kauniyah Natural Skincare</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">

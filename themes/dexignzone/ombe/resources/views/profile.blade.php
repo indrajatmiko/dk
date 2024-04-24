@@ -27,7 +27,7 @@
 							</div>
 							<div class="dz-content">
 								<p class="sub-title">No. Whatsapp</p>
-								<h6 class="title">+62{{ $addr->noWa }}</h6>
+								<h6 class="title">+62{{ $addr->noWa ?? 'anda belum input alamat' }}</h6>
 							</div>
 						</li>
 						<li>

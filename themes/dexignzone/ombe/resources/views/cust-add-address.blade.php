@@ -32,10 +32,10 @@
                 <input type="text" id="alamat" name="alamat" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label class="form-label" for="idProvince">Propinsi</label>
+                <label class="form-label" for="idProvince">Provinsi</label>
                 {{-- <input type="text" id="province" class="form-control"> --}}
-                <select class="form-control" name="idProvince" id="idProvince" aria-label="Pilih Propinsi" required>
-                    <option value="">Pilih Propinsi</option>
+                <select class="form-control" name="idProvince" id="idProvince" aria-label="Pilih Provinsi" required>
+                    <option value="">Pilih Provinsi</option>
                     @foreach($province as $prov)
                         <option value="{{ $prov->province_id }}">{{ $prov->province }}</option>
                     @endforeach
@@ -44,7 +44,7 @@
             <div class="mb-3">
                 <label class="form-label" for="idCity">Kota / Kabupaten</label>
                 <select class="form-control" name="idCity" id="idCity" required>
-                    <option value="">Pilih Propinsi terlebih dahulu</option>
+                    <option value="">Pilih Provinsi terlebih dahulu</option>
                 </select>
             </div>
             <div class="mb-3">

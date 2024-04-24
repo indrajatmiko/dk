@@ -57,7 +57,7 @@ class HomeController extends Controller
         $produk = Produk::where('id', $idProduk)->first();
         $fotos = ProdukFoto::where('id_sku', $idProduk)->get();
 
-        $pageTitle = 'Detail';
+        $pageTitle = 'Detail Produk '.$produk->nama;
         return view('product', compact('pageTitle', 'produk', 'fotos'));
     }
 
