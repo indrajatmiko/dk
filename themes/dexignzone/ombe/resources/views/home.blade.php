@@ -93,10 +93,10 @@
 <!-- News -->
 <div class="title-bar">
     <h5 class="title">Berita Terbaru</h5>
-    <a href="{{ route('home.news') }}">More</a>
+    {{-- <a href="{{ route('home.news') }}">More</a> --}}
 </div>
 
-<ul class="featured-list">
+{{-- <ul class="featured-list">
     <li>
         <div class="dz-card list">
             <div class="dz-media">
@@ -114,6 +114,6 @@
             </div>
         </div>
     </li>
-</ul>
+</ul> --}}
 <!-- News -->
 @endsection

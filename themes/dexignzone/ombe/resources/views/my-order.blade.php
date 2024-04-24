@@ -81,18 +81,37 @@
                                     <div class="dz-card list">
                                         <div class="dz-content">
                                             <div class="dz-head">
-                                                <h6 class="title"><a href="product-detail.html">No. Pesanan : </a></h6>
-                                                <ul class="tag-list">
-                                                    <li><a href="javascript:void(0);">Tea</a></li>
-                                                    <li><a href="javascript:void(0);">Lemon</a></li>
+                                                <h6 class="title">No. Pesanan : {{ $dikemas['penerima']['noPesanan'] }} <small>{{ $dikemas['penerima']['created_at']->format('d M Y H:i:s') }} WIB</small></h6>
+                                                <ul>
+                                                    @foreach($dikemas['produk'] as $produk)
+                                                        <li><a href="javascript:void(0);">{{ $produk['jumlah'] }} x {{ $produk['nama'] }}</a></li>
+                                                        @php
+                                                            $subtotal += $produk['subtotal'];
+                                                        @endphp
+                                                    @endforeach
+                                                    <li>&nbsp;</li>
+                                                    <li>&blacktriangleright;{{ $dikemas['penerima']['origin'] }} &LongRightArrow; {{ $dikemas['penerima']['destination'] }}</li>
+                                                    @if($dikemas['penerima']['ongkir'] <= 0)
+                                                        <li>Ongkir {{ $dikemas['penerima']['jasa_kirim'] }} : Belum dihitung, mohon menunggu..</li>
+                                                    @else
+                                                        <li>Ongkir {{ $dikemas['penerima']['jasa_kirim'] }} : Rp. {{ $dikemas['penerima']['ongkir'] ?? '0' }}</li>
+                                                    @endif
                                                 </ul>
                                             </div>
                                             <ul class="dz-meta">
-                                                <li class="dz-price flex-1">$12.6</li>
-                                                <li>
-                                                    <a href="track-order.html" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Track Order</a>
-                                                </li>
+                                                @if($dikemas['penerima']['ongkir'] <= 0)
+                                                    <li class="dz-price flex-1">Rp. ***.*** <small> Hemat : Rp. {{ $dikemas['penerima']['hemat'] ?? '0' }}</small></li>
+                                                    <li>
+                                                        <a href="#" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
+                                                    </li>
+                                                @else
+                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $dikemas['penerima']['ongkir'] - $dikemas['penerima']['hemat']), 0, ".", ".") }} </li>
+                                                    <li>
+                                                        <a href="#" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Pembayaran diterima</a>
+                                                    </li>
+                                                @endif
                                             </ul>
+                                            <small> Hemat : Rp. {{ $dikemas['penerima']['hemat'] ?? '0' }}</small>
                                         </div>
                                     </div>
                                 </li>
@@ -112,18 +131,37 @@
                                     <div class="dz-card list">
                                         <div class="dz-content">
                                             <div class="dz-head">
-                                                <h6 class="title"><a href="product-detail.html">No. Pesanan : </a></h6>
-                                                <ul class="tag-list">
-                                                    <li><a href="javascript:void(0);">Tea</a></li>
-                                                    <li><a href="javascript:void(0);">Lemon</a></li>
+                                                <h6 class="title">No. Pesanan : {{ $dikirim['penerima']['noPesanan'] }} <small>{{ $dikirim['penerima']['created_at']->format('d M Y H:i:s') }} WIB</small></h6>
+                                                <ul>
+                                                    @foreach($dikirim['produk'] as $produk)
+                                                        <li><a href="javascript:void(0);">{{ $produk['jumlah'] }} x {{ $produk['nama'] }}</a></li>
+                                                        @php
+                                                            $subtotal += $produk['subtotal'];
+                                                        @endphp
+                                                    @endforeach
+                                                    <li>&nbsp;</li>
+                                                    <li>&blacktriangleright;{{ $dikirim['penerima']['origin'] }} &LongRightArrow; {{ $dikirim['penerima']['destination'] }}</li>
+                                                    @if($dikirim['penerima']['ongkir'] <= 0)
+                                                        <li>Ongkir {{ $dikirim['penerima']['jasa_kirim'] }} : Belum dihitung, mohon menunggu..</li>
+                                                    @else
+                                                        <li>Ongkir {{ $dikirim['penerima']['jasa_kirim'] }} : Rp. {{ $dikirim['penerima']['ongkir'] ?? '0' }}</li>
+                                                    @endif
                                                 </ul>
                                             </div>
                                             <ul class="dz-meta">
-                                                <li class="dz-price flex-1">$12.6</li>
-                                                <li>
-                                                    <a href="track-order.html" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Track Order</a>
-                                                </li>
+                                                @if($dikirim['penerima']['ongkir'] <= 0)
+                                                    <li class="dz-price flex-1">Rp. ***.*** <small> Hemat : Rp. {{ $dikirim['penerima']['hemat'] ?? '0' }}</small></li>
+                                                    <li>
+                                                        <a href="#" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
+                                                    </li>
+                                                @else
+                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $dikirim['penerima']['ongkir'] - $dikirim['penerima']['hemat']), 0, ".", ".") }} </li>
+                                                    <li>
+                                                        <a href="#" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Lacak</a>
+                                                    </li>
+                                                @endif
                                             </ul>
+                                            <small> Hemat : Rp. {{ $dikirim['penerima']['hemat'] ?? '0' }}</small>
                                         </div>
                                     </div>
                                 </li>
@@ -143,18 +181,37 @@
                                     <div class="dz-card list">
                                         <div class="dz-content">
                                             <div class="dz-head">
-                                                <h6 class="title"><a href="product-detail.html">No. Pesanan : </a></h6>
-                                                <ul class="tag-list">
-                                                    <li><a href="javascript:void(0);">Tea</a></li>
-                                                    <li><a href="javascript:void(0);">Lemon</a></li>
+                                                <h6 class="title">No. Pesanan : {{ $selesai['penerima']['noPesanan'] }} <small>{{ $selesai['penerima']['created_at']->format('d M Y H:i:s') }} WIB</small></h6>
+                                                <ul>
+                                                    @foreach($selesai['produk'] as $produk)
+                                                        <li><a href="javascript:void(0);">{{ $produk['jumlah'] }} x {{ $produk['nama'] }}</a></li>
+                                                        @php
+                                                            $subtotal += $produk['subtotal'];
+                                                        @endphp
+                                                    @endforeach
+                                                    <li>&nbsp;</li>
+                                                    <li>&blacktriangleright;{{ $selesai['penerima']['origin'] }} &LongRightArrow; {{ $selesai['penerima']['destination'] }}</li>
+                                                    @if($selesai['penerima']['ongkir'] <= 0)
+                                                        <li>Ongkir {{ $selesai['penerima']['jasa_kirim'] }} : Belum dihitung, mohon menunggu..</li>
+                                                    @else
+                                                        <li>Ongkir {{ $selesai['penerima']['jasa_kirim'] }} : Rp. {{ $selesai['penerima']['ongkir'] ?? '0' }}</li>
+                                                    @endif
                                                 </ul>
                                             </div>
                                             <ul class="dz-meta">
-                                                <li class="dz-price flex-1">$12.6</li>
-                                                <li>
-                                                    <a href="track-order.html" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Track Order</a>
-                                                </li>
+                                                @if($selesai['penerima']['ongkir'] <= 0)
+                                                    <li class="dz-price flex-1">Rp. ***.*** <small> Hemat : Rp. {{ $selesai['penerima']['hemat'] ?? '0' }}</small></li>
+                                                    <li>
+                                                        <a href="#" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
+                                                    </li>
+                                                @else
+                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $selesai['penerima']['ongkir'] - $selesai['penerima']['hemat']), 0, ".", ".") }} </li>
+                                                    <li>
+                                                        <a href="#" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Ulasan</a>
+                                                    </li>
+                                                @endif
                                             </ul>
+                                            <small> Hemat : Rp. {{ $selesai['penerima']['hemat'] ?? '0' }}</small>
                                         </div>
                                     </div>
                                 </li>
