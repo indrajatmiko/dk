@@ -10,6 +10,7 @@ use App\Models\Reseller;
 use App\Models\Produk;
 use App\Models\ProdukFoto;
 use App\Models\SubDistricts;
+use App\Models\Faq;
 use RajaOngkir;
 use DB;
 
@@ -313,6 +314,14 @@ class HomeController extends Controller
         ]);
 
         return redirect('checkout');
+    }
+
+    public function faq()
+    {
+        $pageTitle = 'FAQ';
+        $faqs = Faq::where('status', '1')->get();
+
+        return view('faq', compact('pageTitle', 'faqs'));
     }
 
     public function news()

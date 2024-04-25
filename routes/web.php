@@ -58,7 +58,7 @@ Route::get('/produk/{idProduk}', [HomeController::class, 'produk'])->name('home.
 
 Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['auth']], function () {
     Route::get('/profile', 'HomeController@profile')->name('home.profile');
-    Route::get('/wishlist', 'HomeController@profile')->name('home.wishlist');
+    Route::get('/faq', 'HomeController@faq')->name('home.faq');
 
     Route::get('/cart', 'HomeController@cart')->name('home.cart');
     Route::post('/cartAdd', 'HomeController@cartAdd')->name('home.cartAdd');
@@ -89,6 +89,7 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['auth']], 
     Route::get('/myOrder', 'PesananController@myOrder')->name('pesanan.myOrder');
 
     Route::get('/tesEmail', 'PesananController@tesEmail')->name('pesanan.email');
+    Route::get('/tesTemplate', 'PesananController@tesTemplate')->name('pesanan.tesTemplate');
 
     Route::get('/news', 'HomeController@news')->name('home.news');
 });

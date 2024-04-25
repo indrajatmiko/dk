@@ -87,10 +87,48 @@ class PesananController extends Controller
                 'idReseller' => $request->idReseller,
             ]);
         }
+        $judul = 'Pesanan Baru! #'.$noPesanan;
+        $data = [
+            'noPesanan' => $noPesanan,
+            'marketplace' => 'DK',
+            'status' => 'unpaid',
+            'waktu_dibayar' => '2000-01-01',
+            'nama_pembeli' => $addrSend->nama,
+            'nama_penerima' => $addrSend->nama,
+            'alamat' => $addrSend->alamat .' Kel. '. $addrSend->kelurahan,
+            'kecamatan' => $addrSend->subdistrict_name,
+            'kotakab' => $addrSend->type .' '. $addrSend->city_name,
+            'provinsi' => $addrSend->province,
+            'sku' => $item->sku,
+            'variasi' => '',
+            'harga' => $item->price,
+            'jumlah' => $item->qty,
+            'subtotal' => $subTotal,
+            'jasa_kirim' => $jenisOngkir,
+            'biaya_pengelolaan' => '0',
+            'voucher' => LaraCart::discountTotal(false),
+            'diskon' => '0',
+            'waktu_cetak' => '2000-01-01',
+            'nama_produk' => $item->name,
+            'no_hp' => $addrSend->noWa,
+            'id_user' => auth('web')->user()->id,
+            'ongkir' => $hargaOngkir,
+            'origin' => $sesKotaKab,
+            'destination' => $addrSend->city_name,
+            'no_resi' => '',
+            'metodeTransfer' => $bankPayment,
+            'catatan' => $request->note,
+            'kodeunik' => $request->kodeUnik,
+            'hemat' => $request->hemat,
+            'idReseller' => $request->idReseller,
+        ];
+
+        Mail::to($user_email)->send(new KirimEmail($judul, $data));
+
+
         LaraCart::destroyCart();
         $request->session()->forget(['bankPayment', 'jenisOngkir', 'hargaOngkir', 'beratPaket', 'idAlamatCust']);
 
-        Mail::to($user_name)->send(new KirimEmail($user_name));
         return redirect('home');
 
     }
@@ -98,7 +136,7 @@ class PesananController extends Controller
     public function myOrder() {
         $pageTitle = 'Pesanan Saya';
 
-        $tmp_pesanans = Pesanan::where(['id_user' => auth('web')->user()->id])->get();
+        $tmp_pesanans = Pesanan::where(['id_user' => auth('web')->user()->id])->orderBy('id', 'DESC')->get();
         $pesanans = array();
         foreach($tmp_pesanans as $key => $psn){
             $pesanans[$psn->status][$psn->noPesanan]['penerima'] = array(
@@ -148,5 +186,11 @@ class PesananController extends Controller
         ];
 
         Mail::to($user_email)->send(new KirimEmail($judul, $data));
+    }
+
+    public function tesTemplate() {
+        $pageTitle = 'Template Email';
+
+        return view('mail.kirim-email', compact('pageTitle'));
     }
 }
