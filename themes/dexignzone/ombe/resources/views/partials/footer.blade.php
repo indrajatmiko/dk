@@ -1,4 +1,4 @@
-@if(request()->segment(1) === 'home')
+@if(request()->segment(1) === 'profile')
 	<!-- Modal -->
 	<div class="modal fade dz-pwa-modal" id="pwaModal" tabindex="-1" aria-labelledby="pwaModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
