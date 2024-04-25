@@ -25,8 +25,8 @@
                             <label class="radio-label">
                                 <input type="radio" name="idAlamatCust" value="{{$addr->id}}" required>
                                 <div class="checkmark">
-                                    <div class="dz-icon style-2 icon-fill"><i class="fi fi-rr-{{ $label }} font-20"></i></div>
-                                    <div class="list-content">
+                                    {{-- <div class="dz-icon style-1 icon-fill" style="width: 3rem !important;"><i class="fi fi-rr-{{ $label }} font-20"></i></div> --}}
+                                    <div class="list-content" style="width: 95% !important;">
                                         <h6 class="title">{{ $addr->nama }} ({{ $addr->label }})</h6>
                                         <p class="active-status">{{ $addr->noWa }}<br/>{{ $addr->alamat }}, Kel. {{ $addr->kelurahan }}, kec. {{ $addr->subdistrict_name }}, {{ $addr->type }} {{ $addr->city_name }}, {{ $addr->province }}</p>
                                     </div>
