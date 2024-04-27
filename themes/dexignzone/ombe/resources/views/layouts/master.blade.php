@@ -15,17 +15,17 @@
 
 	<meta name="description" content="DK atau Distributor Kauniyah adalah Distributor Resmi dari Produk Kauniyah Oil dan Kauniyah Natural Skincare, menerima pendaftaran Reseller dan penjualan langsung ke customer. Jaminan Produk Original, Asli serta transaksi yang aman dan pengiriman yang cepat.">
 
-	<meta property="og:title" content="DK -Distributor Resmi Kauniyah Oil dan Kauniyah Natural Skincare">
+	<meta property="og:title" content="DK - Distributor Resmi Kauniyah Oil dan Kauniyah Natural Skincare">
 	<meta property="og:description" content="DK atau Distributor Kauniyah adalah Distributor Resmi dari Produk Kauniyah Oil dan Kauniyah Natural Skincare, menerima pendaftaran Reseller dan penjualan langsung ke customer di seluruh indonesia. Jaminan Produk Original, Asli serta transaksi yang aman dan pengiriman yang cepat.">
 
-	<meta property="og:image" content="{!! theme_asset('img/social-image.png') !!}">
+	<meta property="og:image" content="{!! theme_asset('img/social-image.webp') !!}">
 
 	<meta name="format-detection" content="telephone=no">
 
-	<meta name="twitter:title" content="DK -Distributor Resmi Kauniyah Oil dan Kauniyah Natural Skincare">
+	<meta name="twitter:title" content="DK - Distributor Resmi Kauniyah Oil dan Kauniyah Natural Skincare">
 	<meta name="twitter:description" content="DK atau Distributor Kauniyah adalah Distributor Resmi dari Produk Kauniyah Oil dan Kauniyah Natural Skincare, menerima pendaftaran Reseller dan penjualan langsung ke customer di seluruh indonesia. Jaminan Produk Original, Asli serta transaksi yang aman dan pengiriman yang cepat.">
 
-	<meta name="twitter:image" content="{!! theme_asset('img/social-image.png') !!}">
+	<meta name="twitter:image" content="{!! theme_asset('img/social-image.webp') !!}">
 	<meta name="twitter:card" content="summary_large_image">
 
 	<!-- Mobile Specific -->
