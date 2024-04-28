@@ -71,6 +71,8 @@
         <p>Silakan Transfer sejumlah <strong>Rp. {{$total}} via {{ $data[0]['metodeTransfer'] ?? '-'}}</strong>, proses pengecekan maksimal 30 menit.</p>
         <p><i>Hati-hati penipuan, DK hanya mempunyai 1 pemilik rekening an Indah Nuraeni.</i></p>
         <img src="{{ $message->embed('https://distributorkauniyah.com/my/public/themes/dexignzone/ombe/img/app-logo/logo-distributor-kauniyah-panjang.png') }}" alt="Logo">
+        <hr>
+        <center><small>Ini adalah email otomatis. Mohon untuk tidak membalas email ini.<br/>Tambahkan info@distributorkauniyah.com pada daftar kontak untuk memastikan email dari DK masuk ke inbox-mu.</small></center>
     </div>
 </body>
 </html>

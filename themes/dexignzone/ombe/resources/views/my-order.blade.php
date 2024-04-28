@@ -50,12 +50,12 @@
                                             </div>
                                             <ul class="dz-meta">
                                                 @if($unpaid['penerima']['ongkir'] <= 0)
-                                                    <li class="dz-price flex-1">Rp. ***.*** <small> Hemat : Rp. {{ $unpaid['penerima']['hemat'] ?? '0' }}</small></li>
+                                                    <li class="dz-price flex-1">Rp. ***.***</li>
                                                     <li>
                                                         <a href="track-order.html" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
                                                     </li>
                                                 @else
-                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $unpaid['penerima']['ongkir'] - $unpaid['penerima']['hemat']), 0, ".", ".") }} </li>
+                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $unpaid['penerima']['ongkir'] - $unpaid['penerima']['kodeunik']), 0, ".", ".") }} </li>
                                                     <li>
                                                         <a href="track-order.html" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Bayar Sekarang</a>
                                                     </li>
@@ -100,12 +100,12 @@
                                             </div>
                                             <ul class="dz-meta">
                                                 @if($dikemas['penerima']['ongkir'] <= 0)
-                                                    <li class="dz-price flex-1">Rp. ***.*** <small> Hemat : Rp. {{ $dikemas['penerima']['hemat'] ?? '0' }}</small></li>
+                                                    <li class="dz-price flex-1">Rp. ***.***</li>
                                                     <li>
                                                         <a href="#" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
                                                     </li>
                                                 @else
-                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $dikemas['penerima']['ongkir'] - $dikemas['penerima']['hemat']), 0, ".", ".") }} </li>
+                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $dikemas['penerima']['ongkir'] - $dikemas['penerima']['kodeunik']), 0, ".", ".") }} </li>
                                                     <li>
                                                         <a href="#" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Pembayaran diterima</a>
                                                     </li>
@@ -150,12 +150,12 @@
                                             </div>
                                             <ul class="dz-meta">
                                                 @if($dikirim['penerima']['ongkir'] <= 0)
-                                                    <li class="dz-price flex-1">Rp. ***.*** <small> Hemat : Rp. {{ $dikirim['penerima']['hemat'] ?? '0' }}</small></li>
+                                                    <li class="dz-price flex-1">Rp. ***.***</li>
                                                     <li>
                                                         <a href="#" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
                                                     </li>
                                                 @else
-                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $dikirim['penerima']['ongkir'] - $dikirim['penerima']['hemat']), 0, ".", ".") }} </li>
+                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $dikirim['penerima']['ongkir'] - $dikirim['penerima']['kodeunik']), 0, ".", ".") }} </li>
                                                     <li>
                                                         <a href="#" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Lacak</a>
                                                     </li>
@@ -200,12 +200,12 @@
                                             </div>
                                             <ul class="dz-meta">
                                                 @if($selesai['penerima']['ongkir'] <= 0)
-                                                    <li class="dz-price flex-1">Rp. ***.*** <small> Hemat : Rp. {{ $selesai['penerima']['hemat'] ?? '0' }}</small></li>
+                                                    <li class="dz-price flex-1">Rp. ***.***</li>
                                                     <li>
                                                         <a href="#" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
                                                     </li>
                                                 @else
-                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $selesai['penerima']['ongkir'] - $selesai['penerima']['hemat']), 0, ".", ".") }} </li>
+                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $selesai['penerima']['ongkir'] - $selesai['penerima']['kodeunik']), 0, ".", ".") }} </li>
                                                     <li>
                                                         <a href="#" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Ulasan</a>
                                                     </li>
