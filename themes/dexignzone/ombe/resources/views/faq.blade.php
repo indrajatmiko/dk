@@ -8,7 +8,7 @@
             @foreach($faqs as $faq)
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="heading{{$faq->id}}">
-                        <a href="javascript:void(0);" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapse{{$faq->id}}" aria-expanded="true" aria-controls="collapse{{$faq->id}}">
+                        <a href="javascript:void(0);" class="accordion-button {{ $faq->id > 1 ? 'collapsed' : ''}}" data-bs-toggle="collapse" data-bs-target="#collapse{{$faq->id}}" aria-expanded="true" aria-controls="collapse{{$faq->id}}">
                             {{ $faq->tanya }}
                         </a>
                     </h2>

@@ -67,7 +67,7 @@
                                 {{-- <span class="dz-icon">
                                     <img src="{!! theme_asset('img/New_Logo_JNE.webp') !!}" alt="">
                                 </span> --}}
-                                <span class="acco-title">JNE - {{ $ongkir->service }}</span>
+                                <span class="acco-title">JNT - {{ $ongkir->service }}</span>
                                 <span class="checkmark"></span>
                             </button>
                         </div>
@@ -75,7 +75,7 @@
                             <div class="accordion-body">
                                 <p>{{ $ongkir->description }}</p>
                                 @foreach($ongkir->cost as $detail)
-                                    Harga: {{ $detail->value }} <br>
+                                    Harga: Rp. {{ $detail->value }} <br>
                                     Estimasi: {{ $detail->etd }} hari<br>
                                     <input type="hidden" id="jenisOngkir{{ $ongkir->service }}" value="JNE {{ $ongkir->service }}">
                                     <input type="hidden" id="hargaOngkir{{ $ongkir->service }}" value="{{ $detail->value }}">
