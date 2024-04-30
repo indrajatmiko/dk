@@ -52,12 +52,12 @@
                                                 @if($unpaid['penerima']['ongkir'] <= 0)
                                                     <li class="dz-price flex-1">Rp. ***.***</li>
                                                     <li>
-                                                        <a href="track-order.html" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
+                                                        <a href="#" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
                                                     </li>
                                                 @else
                                                     <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $unpaid['penerima']['ongkir'] - $unpaid['penerima']['kodeunik']), 0, ".", ".") }} </li>
                                                     <li>
-                                                        <a href="track-order.html" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Bayar Sekarang</a>
+                                                        <a href="{{ route('pesanan.paymentOrder', $unpaid['penerima']['noPesanan']) }}" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Bayar Sekarang</a>
                                                     </li>
                                                 @endif
                                             </ul>

@@ -87,6 +87,7 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['auth']], 
 
     Route::post('/pesananStore', 'PesananController@store')->name('pesanan.store');
     Route::get('/myOrder', 'PesananController@myOrder')->name('pesanan.myOrder');
+    Route::get('/paymentOrder/{idPesanan}', 'PesananController@paymentOrder')->name('pesanan.paymentOrder');
 
     Route::get('/tesEmail', 'PesananController@tesEmail')->name('pesanan.email');
     Route::get('/tesTemplate', 'PesananController@tesTemplate')->name('pesanan.tesTemplate');

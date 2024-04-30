@@ -38,7 +38,7 @@ class PesananController extends Controller
         $addrSend = session('addrSend');
 
         $input = $request->all();
-        $noPesanan = date('ymd').Str::upper(Str::random(9));
+        $noPesanan = date('ymd').Str::upper(Str::random(8));
 
         // $hemat = 0;
         // $totalQty = 0;
@@ -195,5 +195,12 @@ class PesananController extends Controller
         $pageTitle = 'Template Email';
 
         return view('mail.kirim-email', compact('pageTitle'));
+    }
+
+    public function paymentOrder($idPesanan) {
+        $pageTitle = 'Pembayaran Pesanan';
+        $pesanans = Pesanan::where(['id_user' => auth('web')->user()->id, 'noPesanan' => $idPesanan])->orderBy('id', 'DESC')->get();
+
+        return view('paymentOrder', compact('pageTitle', 'pesanans'));
     }
 }

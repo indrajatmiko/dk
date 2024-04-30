@@ -56,7 +56,7 @@
         <table bgcolor="#ffffff" cellpadding="2" cellspacing="0" border="0">
             <tr>
                 <td>Total Transfer</td>
-                <td>: Rp. {{ $total ?? '0'}}</td>
+                <td>: Rp. {{ number_format($total, 0, ".", ".") ?? '0'}}</td>
             </tr>
             <tr>
                 <td>BCA</td>
@@ -68,7 +68,7 @@
             </tr>
         </table>
 
-        <p>Silakan Transfer sejumlah <strong>Rp. {{$total}} via {{ $data[0]['metodeTransfer'] ?? '-'}}</strong>, proses pengecekan maksimal 30 menit.</p>
+        <p>Silakan Transfer sejumlah <strong>Rp. {{number_format($total, 0, ".", ".")}} via {{ $data[0]['metodeTransfer'] ?? '-'}}</strong>, proses pengecekan maksimal 30 menit.</p>
         <p><i>Hati-hati penipuan, DK hanya mempunyai 1 pemilik rekening an Indah Nuraeni.</i></p>
         <img src="{{ $message->embed('https://distributorkauniyah.com/my/public/themes/dexignzone/ombe/img/app-logo/logo-distributor-kauniyah-panjang.png') }}" alt="Logo">
         <hr>
