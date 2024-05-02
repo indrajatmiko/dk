@@ -3,15 +3,19 @@
 @section('content')
     <main class="page-content space-top p-b80">
         <div class="container">
-
+        @php
+            $total = 0;
+        @endphp
         @foreach ($pesanans as $ps)
             @php
                 $metodeTransfer = $ps->metodeTransfer;
-                $total = $ps->subtotal+$ps->ongkir-$ps->voucher-$ps->kodeunik;
+                $total += $ps->subtotal;
                 $tglPesan = $ps->created_at;
             @endphp
         @endforeach
-
+        @php
+            $total += $ps->ongkir-$ps->voucher-$ps->kodeunik;
+        @endphp
         @if($metodeTransfer == 'Transfer Bank BCA')
         <div class="card text-center">
             <div class="card-body">
@@ -76,6 +80,7 @@
             </div>
         </div>
         @endif
+        <button type="button" class="btn mb-2 me-2 btn-block btn-primary">Primary</button>
             <div class="fixed-content">
                 <ul class="dz-track-list">
                     <li>
@@ -98,7 +103,7 @@
                         </div>
                         <div class="info">
                             <h5 class="title" style="opacity: 0.1">Pesanan Dibayarkan</h5>
-                            <p style="opacity: 0.1">(Rp. {{number_format($total, 0, ".", ".")}})</p>
+                            <p style="opacity: 0.1">(Rp. 0)</p>
                             <p><small></small></p>
                         </div>
                     </li>

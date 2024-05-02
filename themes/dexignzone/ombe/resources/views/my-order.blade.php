@@ -55,7 +55,7 @@
                                                         <a href="#" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
                                                     </li>
                                                 @else
-                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $unpaid['penerima']['ongkir'] - $unpaid['penerima']['kodeunik']), 0, ".", ".") }} </li>
+                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $unpaid['penerima']['ongkir'] - $unpaid['penerima']['voucher'] - $unpaid['penerima']['kodeunik']), 0, ".", ".") }} </li>
                                                     <li>
                                                         <a href="{{ route('pesanan.paymentOrder', $unpaid['penerima']['noPesanan']) }}" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Bayar Sekarang</a>
                                                     </li>
@@ -105,7 +105,7 @@
                                                         <a href="#" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
                                                     </li>
                                                 @else
-                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $dikemas['penerima']['ongkir'] - $dikemas['penerima']['kodeunik']), 0, ".", ".") }} </li>
+                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $dikemas['penerima']['ongkir'] - $dikemas['penerima']['voucher'] - $dikemas['penerima']['kodeunik']), 0, ".", ".") }} </li>
                                                     <li>
                                                         <a href="#" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Pembayaran diterima</a>
                                                     </li>
@@ -155,7 +155,7 @@
                                                         <a href="#" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
                                                     </li>
                                                 @else
-                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $dikirim['penerima']['ongkir'] - $dikirim['penerima']['kodeunik']), 0, ".", ".") }} </li>
+                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $dikirim['penerima']['ongkir'] - $dikirim['penerima']['voucher'] - $dikirim['penerima']['kodeunik']), 0, ".", ".") }} </li>
                                                     <li>
                                                         <a href="#" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Lacak</a>
                                                     </li>
@@ -205,7 +205,7 @@
                                                         <a href="#" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
                                                     </li>
                                                 @else
-                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $selesai['penerima']['ongkir'] - $selesai['penerima']['kodeunik']), 0, ".", ".") }} </li>
+                                                    <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $selesai['penerima']['ongkir'] - $selesai['penerima']['voucher'] - $selesai['penerima']['kodeunik']), 0, ".", ".") }} </li>
                                                     <li>
                                                         <a href="#" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Ulasan</a>
                                                     </li>
