@@ -19384,3 +19384,20 @@ label input {
     transform: rotatex(360deg); } }
 
 /*# sourceMappingURL=style.css.map */
+
+.box-blink {
+    border: 5px dashed #000000;
+    border-radius: 10px;
+    font-size: 64px;
+    font-weight: bold;
+    text-align: center;
+}
+.blink {
+    animation: blinker 1s step-start infinite;
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }

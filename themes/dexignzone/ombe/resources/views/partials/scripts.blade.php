@@ -34,7 +34,7 @@
     <script src="{!! theme_asset('vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js') !!}"></script>
 @endif
 
-@if(request()->segment(1) === 'addAddress' OR request()->segment(1) === 'cart')
+@if(request()->segment(1) === 'addAddress' OR request()->segment(1) === 'cart' OR request()->segment(1) === 'join-reseller')
 <script type="text/javascript">
     $(document).ready(function () {
         $('select[name="idProvince"]').on('change', function() {

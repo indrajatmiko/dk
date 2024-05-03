@@ -6,6 +6,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CustAddressController;
 use App\Http\Controllers\PesananController;
+use App\Http\Controllers\ResellerController;
 use App\Mail\KirimEmail;
 use Illuminate\Support\Facades\Mail;
 /*
@@ -93,4 +94,6 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['auth']], 
     Route::get('/tesTemplate', 'PesananController@tesTemplate')->name('pesanan.tesTemplate');
 
     Route::get('/news', 'HomeController@news')->name('home.news');
+
+    Route::get('/join-reseller', 'ResellerController@index')->name('reseller.index');
 });

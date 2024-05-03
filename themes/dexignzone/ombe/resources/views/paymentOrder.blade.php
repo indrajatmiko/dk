@@ -80,7 +80,7 @@
             </div>
         </div>
         @endif
-        <button type="button" class="btn mb-2 me-2 btn-block btn-primary">Primary</button>
+        {{-- <button type="button" class="btn mb-2 me-2 btn-block btn-primary">Primary</button> --}}
             <div class="fixed-content">
                 <ul class="dz-track-list">
                     <li>

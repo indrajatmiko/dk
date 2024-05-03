@@ -38,11 +38,11 @@
             <li>
                 <div class="dz-card list">
                     <div class="dz-media">
-                        <a href="product-detail.html"><img src="{!! theme_asset('img/products/product1.jpg') !!}" alt=""></a>
+                        <a href="{{ route('reseller.index') }}"><img src="{!! theme_asset('img/products/product1.jpg') !!}" alt=""></a>
                     </div>
                     <div class="dz-content">
                         <div class="dz-head">
-                            <h6 class="title"><a href="product-detail.html">Buka Rezeki Baru dari Berjualan Produk Premium Ummu Balqis </a></h6>
+                            <h6 class="title"><a href="{{ route('reseller.index') }}">Buka Rezeki Baru dari Berjualan Produk Premium Ummu Balqis </a></h6>
                             <span class="dz-text">Eits, sabar dulu...
                                 Mungkin dulu (atau sekarang) kamu juga lagi mencari ataupun mencoba jualan dengan jadi reseller, tapi oh ternyata… kok banyak banget ya masalahnya !?</span>
                         </div>
