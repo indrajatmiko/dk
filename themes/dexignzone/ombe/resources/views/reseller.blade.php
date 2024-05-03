@@ -38,7 +38,7 @@
             <li>
                 <div class="dz-card list">
                     <div class="dz-media">
-                        <a href="{{ route('reseller.index') }}"><img src="{!! theme_asset('img/products/product1.jpg') !!}" alt=""></a>
+                        <a href="{{ route('reseller.index') }}"><img src="{{asset('uploads/produk-laris-manis.webp') }}" alt=""></a>
                     </div>
                     <div class="dz-content">
                         <div class="dz-head">

@@ -21,7 +21,7 @@ class ResellerController extends Controller
 {
 
     public function index() {
-        $pageTitle = 'Join Reseller';
+        $pageTitle = 'Join Reseller Kauniyah';
         $province = RajaOngkir::province()->get();
 
         return view('join-reseller', compact('pageTitle', 'province'));

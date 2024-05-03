@@ -10,7 +10,7 @@
     <img src="{{asset('uploads/kepala-pusing.webp') }}" alt="">
     <div class="mt-4">
         <h4>Tenang tenang...</h4>
-        <p>Sesuai dengan visi DistributorKauniyah yang ingin membantu emak-emak biar bisa mendapatkan penghasilan dengan cara yang paling MUDAH</p>
+        <p>Sesuai dengan visi DistributorKauniyah yang ingin membantu emak-emak biar bisa mendapatkan penghasilan dengan cara yang paling MUDAH*.</p>
     </div>
     <div class="mt-4">
         <h4>Maka kami sudah siapkan solusinya!</h4>
@@ -119,15 +119,15 @@
                 <p>Isi formulir dibawah ini dengan benar & lengkap.</p>
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama Lengkap *</label>
-                    <input type="text" class="form-control" id="nama" placeholder="">
+                    <input type="text" class="form-control" id="nama" value="{{ auth('web')->user()->name }}" required>
                 </div>
                 <div class="mb-3">
                     <label for="nama" class="form-label">No. WA *</label>
-                    <input type="text" class="form-control" id="nama" placeholder="contoh : +6281234567890">
+                    <input type="text" class="form-control" id="nama" placeholder="contoh : +6281234567890" required>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email *</label>
-                    <input type="email" class="form-control" id="email" placeholder="contoh : +6281234567890">
+                    <input type="email" class="form-control" id="email" value="{{ auth('web')->user()->email }}" readonly>
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="idProvince">Provinsi</label>
