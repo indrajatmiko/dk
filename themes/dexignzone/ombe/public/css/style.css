@@ -19392,12 +19392,18 @@ label input {
     font-weight: bold;
     text-align: center;
 }
+.box-blink-small {
+    border: 5px dashed #000000;
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: center;
+}
 .blink {
-    animation: blinker 1s step-start infinite;
+    animation: blinker 1.5s step-start infinite;
   }
 
-  @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
-  }
+@keyframes blinker {
+50% {
+    opacity: 0;
+}
+}

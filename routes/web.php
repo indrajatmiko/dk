@@ -96,4 +96,6 @@ Route::group(['namespace' => 'App\Http\Controllers', 'middleware' => ['auth']], 
     Route::get('/news', 'HomeController@news')->name('home.news');
 
     Route::get('/join-reseller', 'ResellerController@index')->name('reseller.index');
+    Route::post('/join-reseller-store', 'ResellerController@store')->name('reseller.store');
+    Route::get('/join-reseller-step2', 'ResellerController@step2')->name('reseller.step2');
 });

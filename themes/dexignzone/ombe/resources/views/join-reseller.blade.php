@@ -102,7 +102,7 @@
                 </ul>
                 <h4 class="text-center">Apa yang Anda dapatkan di atas seharga</h4>
                 <div class="box-blink blink">GRATIS!!</div>
-                <h4 class="text-center">Untuk Anda yang Mendaftar Sekarang</h4>
+                <h4 class="text-center mt-3">Untuk Anda yang Mendaftar Sekarang</h4>
                 <div class="text-center">
                     <img src="{{asset('uploads/panah.gif') }}" width="200px" alt="">
                 </div>
@@ -117,44 +117,56 @@
             <div class="card-body">
                 <h4>Formulir Pendaftaran Reseller</h4>
                 <p>Isi formulir dibawah ini dengan benar & lengkap.</p>
-                <div class="mb-3">
-                    <label for="nama" class="form-label">Nama Lengkap *</label>
-                    <input type="text" class="form-control" id="nama" value="{{ auth('web')->user()->name }}" required>
-                </div>
-                <div class="mb-3">
-                    <label for="nama" class="form-label">No. WA *</label>
-                    <input type="text" class="form-control" id="nama" placeholder="contoh : +6281234567890" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email *</label>
-                    <input type="email" class="form-control" id="email" value="{{ auth('web')->user()->email }}" readonly>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="idProvince">Provinsi</label>
-                    {{-- <input type="text" id="province" class="form-control"> --}}
-                    <select class="form-control" name="idProvince" id="idProvince" aria-label="Pilih Provinsi" required>
-                        <option value="">Pilih Provinsi</option>
-                        @foreach($province as $prov)
-                            <option value="{{ $prov->province_id }}">{{ $prov->province }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="idCity">Kota / Kabupaten</label>
-                    <select class="form-control" name="idCity" id="idCity" required>
-                        <option value="">Pilih Provinsi terlebih dahulu</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="idSubdistrict">Kecamatan</label>
-                    <select class="form-control" name="idSubdistrict" id="idSubdistrict" required>
-                        <option value="">Pilih Kota / Kab. terlebih dahulu</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label" for="kelurahan">Kelurahan</label>
-                    <input type="text" id="kelurahan" name="kelurahan" class="form-control" required>
-                </div>
+                <form action="{{ route('reseller.store') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="nama_lengkap" class="form-label">Nama Lengkap *</label>
+                        <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="{{ auth('web')->user()->name }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">No. WA *</label>
+                        <input type="text" class="form-control" id="nama" name="no_wa" placeholder="contoh : +6281234567890" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" class="form-control" id="email" name="email" value="{{ auth('web')->user()->email }}" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="idProvince">Provinsi</label>
+                        {{-- <input type="text" id="province" class="form-control"> --}}
+                        <select class="form-control" name="idProvince" id="idProvince" aria-label="Pilih Provinsi" required>
+                            <option value="">Pilih Provinsi</option>
+                            @foreach($province as $prov)
+                                <option value="{{ $prov->province_id }}">{{ $prov->province }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="idCity">Kota / Kabupaten</label>
+                        <select class="form-control" name="idCity" id="idCity" required>
+                            <option value="">Pilih Provinsi terlebih dahulu</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="idSubdistrict">Kecamatan</label>
+                        <select class="form-control" name="idSubdistrict" id="idSubdistrict" required>
+                            <option value="">Pilih Kota / Kab. terlebih dahulu</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="kelurahan">Kelurahan</label>
+                        <input type="text" id="kelurahan" name="kelurahan" class="form-control" required>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Default checkbox
+                        </label>
+                    </div>
+                    <div class="mt-3">
+                        <input class="btn btn-primary" type="submit" value="Simpan">
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -10,10 +10,8 @@ use App\Mail\KirimEmail;
 
 use App\Models\Wilayah;
 use App\Models\Reseller;
-use App\Models\Produk;
-use App\Models\ProdukFoto;
 use App\Models\SubDistricts;
-use App\Models\Pesanan;
+use App\Models\CalonReseller;
 use RajaOngkir;
 use DB;
 
@@ -27,10 +25,28 @@ class ResellerController extends Controller
         return view('join-reseller', compact('pageTitle', 'province'));
     }
 
-    public function paymentOrder($idPesanan) {
-        $pageTitle = 'Pembayaran Pesanan';
-        $pesanans = Pesanan::where(['id_user' => auth('web')->user()->id, 'noPesanan' => $idPesanan])->orderBy('id', 'DESC')->get();
+    public function step2() {
+        $pageTitle = 'Selamat Bergabung Calon Reseller';
+        $province = RajaOngkir::province()->get();
 
-        return view('paymentOrder', compact('pageTitle', 'pesanans'));
+        return view('join-reseller-step2', compact('pageTitle', 'province'));
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'nama_lengkap' => 'required',
+            'no_wa' => 'required',
+            'email' => 'required',
+            'idProvince' => 'required',
+            'idCity' => 'required',
+            'idSubdistrict' => 'required',
+            'kelurahan' => 'required',
+            'status' => 'required',
+            ]);
+
+            CalonReseller::create($request->post());
+
+        return redirect()->route('reseller.step2')->with('success','has been created successfully.');
     }
 }
