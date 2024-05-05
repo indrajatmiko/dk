@@ -42,7 +42,6 @@ class ResellerController extends Controller
             'idCity' => 'required',
             'idSubdistrict' => 'required',
             'kelurahan' => 'required',
-            'status' => 'required',
             ]);
 
             CalonReseller::create($request->post());
