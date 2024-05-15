@@ -193,14 +193,20 @@ class PesananController extends Controller
 
     public function tesTemplate() {
         $pageTitle = 'Template Email';
-
-        return view('mail.kirim-email', compact('pageTitle'));
+        $data = [
+            'nama_lengkap' => 'Indra',
+            'no_wa' => '0898989',
+        ];
+        return view('mail.kirim-email-calon-reseller', compact('pageTitle', 'data'));
     }
 
     public function paymentOrder($idPesanan) {
         $pageTitle = 'Pembayaran Pesanan';
         $pesanans = Pesanan::where(['id_user' => auth('web')->user()->id, 'noPesanan' => $idPesanan])->orderBy('id', 'DESC')->get();
 
-        return view('paymentOrder', compact('pageTitle', 'pesanans'));
+        if($pesanans->isEmpty())
+            return redirect('404');
+        else
+            return view('paymentOrder', compact('pageTitle', 'pesanans'));
     }
 }

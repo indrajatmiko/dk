@@ -100,9 +100,9 @@
                     <li style="margin: 5px 0;"><a title="Emoji One, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Eo_circle_green_checkmark.svg"><img width="24" alt="Eo circle green checkmark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/32px-Eo_circle_green_checkmark.svg.png"></a> Subsidi Ongkir</li>
                     <li style="margin: 5px 0;"><a title="Emoji One, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Eo_circle_green_checkmark.svg"><img width="24" alt="Eo circle green checkmark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/32px-Eo_circle_green_checkmark.svg.png"></a> Akses Premium Marketing Support</li>
                 </ul>
-                <h4 class="text-center">Apa yang Anda dapatkan di atas seharga</h4>
-                <div class="box-blink blink">GRATIS!!</div>
-                <h4 class="text-center mt-3">Untuk Anda yang Mendaftar Sekarang</h4>
+                {{-- <h4 class="text-center">Apa yang Anda dapatkan di atas seharga</h4> --}}
+                <div class="box-blink blink mt-4">GRATIS!!</div>
+                <h4 class="text-center mt-3">Biaya Pendaftaran Untuk Anda yang Mendaftar Sekarang Juga</h4>
                 <div class="text-center">
                     <img src="{{asset('uploads/panah.gif') }}" width="200px" alt="">
                 </div>
@@ -158,13 +158,13 @@
                         <input type="text" id="kelurahan" name="kelurahan" class="form-control" required>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Default checkbox
+                        <input class="form-check-input" type="checkbox" value="" name="persetujuan" id="persetujuan">
+                        <label class="form-check-label" for="persetujuan">
+                          Saya bersedia dihubungi via email atau WA oleh tim DK
                         </label>
                     </div>
                     <div class="mt-3">
-                        <input class="btn btn-primary" type="submit" value="Simpan">
+                        <input class="btn btn-primary" type="submit" value="Simpan" name="simpan" id="simpan" disabled>
                     </div>
                 </form>
             </div>

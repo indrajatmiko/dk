@@ -92,7 +92,7 @@
                         </div>
                         <div class="info">
                             <h5 class="title">Pesanan Dibuat</h5>
-                            <p><small>{{$tglPesan}}</small></p>
+                            <p><small>{{$tglPesan}} WIB</small></p>
                         </div>
                     </li>
                     <li>

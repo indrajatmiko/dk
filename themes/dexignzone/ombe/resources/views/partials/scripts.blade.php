@@ -83,6 +83,12 @@
             }
         });
     });
+
+$(document).ready(function () {
+  $('#persetujuan').click(function () {
+    $('#simpan').prop("disabled", !$("#persetujuan").prop("checked"));
+  })
+});
 </script>
 @endif
 

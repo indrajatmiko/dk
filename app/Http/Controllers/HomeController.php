@@ -58,8 +58,13 @@ class HomeController extends Controller
         $produk = Produk::where('id', $idProduk)->first();
         $fotos = ProdukFoto::where('id_sku', $idProduk)->get();
 
-        $pageTitle = 'Detail Produk '.$produk->nama;
-        return view('product', compact('pageTitle', 'produk', 'fotos'));
+        if($fotos->isEmpty())
+            return redirect('404');
+        else {
+            $pageTitle = 'Detail Produk '.$produk->nama;
+            return view('product', compact('pageTitle', 'produk', 'fotos'));
+        }
+
     }
 
     public function reseller($idWilayah)
@@ -67,8 +72,12 @@ class HomeController extends Controller
         $wilayah = Wilayah::where('id', $idWilayah)->first();
         $resellers = Reseller::where('idWilayah', $idWilayah)->orderBy('idPropinsi')->orderBy('kotaKab')->orderBy('kecamatan')->get();
 
-        $pageTitle = 'Reseller Wilayah '. $wilayah->nama;
-        return view('reseller', compact('pageTitle', 'idWilayah', 'resellers'));
+        if($resellers->isEmpty())
+            return redirect('404');
+        else {
+            $pageTitle = 'Reseller Wilayah '. $wilayah->nama;
+            return view('reseller', compact('pageTitle', 'idWilayah', 'resellers'));
+        }
     }
 
     public function resellerSet($idReseller){

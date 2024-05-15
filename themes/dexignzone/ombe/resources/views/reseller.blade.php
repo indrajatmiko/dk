@@ -48,7 +48,7 @@
                         </div>
                         <ul class="dz-meta mt-2">
                             <li class="dz-price flex-1"><small>23 Maret 2024</small></li>
-                            <li class="dz-pts">Terbatas!</li>
+                            <li class="dz-pts"><a href="{{ route('reseller.index') }}">Daftar Sekarang!</a></li>
                         </ul>
                     </div>
                 </div>
