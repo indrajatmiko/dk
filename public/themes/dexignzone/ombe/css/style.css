@@ -17485,7 +17485,7 @@ label input {
       flex-direction: column;
       justify-content: space-between;
       flex: 1;
-      padding: 10px 0; }
+      padding: 0px 0; }
     .dz-card.list .dz-icon {
       background-color: var(--bg-white);
       border-radius: 50%;

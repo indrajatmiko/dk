@@ -14,6 +14,7 @@ use App\Models\Produk;
 use App\Models\ProdukFoto;
 use App\Models\SubDistricts;
 use App\Models\Pesanan;
+use App\Models\PesananHistoris;
 use RajaOngkir;
 use DB;
 
@@ -125,6 +126,10 @@ class PesananController extends Controller
         $judul = 'Pesanan Baru! #'.$noPesanan;
 
         // dd($data);
+        PesananHistoris::create([
+            'noPesanan' => $noPesanan,
+            'status' => 'unpaid'
+        ]);
 
         Mail::to($user_email)->send(new KirimEmail($judul, $data));
 
@@ -201,12 +206,31 @@ class PesananController extends Controller
     }
 
     public function paymentOrder($idPesanan) {
-        $pageTitle = 'Pembayaran Pesanan';
+        $pageTitle = 'Detail Pesanan';
         $pesanans = Pesanan::where(['id_user' => auth('web')->user()->id, 'noPesanan' => $idPesanan])->orderBy('id', 'DESC')->get();
+        $tmp_historis = PesananHistoris::where(['noPesanan' => $idPesanan])->get();
+        foreach($tmp_historis as $his){
+            $historis[$his->status] = array(
+                'keterangan' => $his->keterangan,
+                'tgl' => $his->created_at,
+            );
+        }
 
         if($pesanans->isEmpty())
             return redirect('404');
         else
-            return view('paymentOrder', compact('pageTitle', 'pesanans'));
+            return view('paymentOrder', compact('pageTitle', 'pesanans', 'historis'));
+    }
+
+    public function paymentNow(Request $request) {
+        $idPesanan = $request->post('idPesanan');
+
+        PesananHistoris::create([
+            'noPesanan' => $idPesanan,
+            'status' => 'paid'
+        ]);
+        Pesanan::where('noPesanan', $idPesanan)->update(['waktu_dibayar' => date('Y-m-d H:i:s')]);
+
+        return redirect("/paymentOrder/$idPesanan");
     }
 }

@@ -57,7 +57,7 @@
                                                 @else
                                                     <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $unpaid['penerima']['ongkir'] - $unpaid['penerima']['voucher'] - $unpaid['penerima']['kodeunik']), 0, ".", ".") }} </li>
                                                     <li>
-                                                        <a href="{{ route('pesanan.paymentOrder', $unpaid['penerima']['noPesanan']) }}" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Bayar Sekarang</a>
+                                                        <a href="{{ route('pesanan.paymentOrder', $unpaid['penerima']['noPesanan']) }}" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">{{$unpaid['penerima']['waktu_dibayar'] == '2000-01-01 00:00:00' ? 'Bayar Sekarang' : 'Menunggu verifikasi'}}</a>
                                                     </li>
                                                 @endif
                                             </ul>
@@ -77,6 +77,9 @@
 						<ul class="featured-list">
                             @if(!empty($pesanans['dikemas']))
                                 @foreach($pesanans['dikemas'] as $dikemas)
+                                @php
+                                    $subtotal = 0;
+                                @endphp
                                 <li>
                                     <div class="dz-card list">
                                         <div class="dz-content">
@@ -102,12 +105,12 @@
                                                 @if($dikemas['penerima']['ongkir'] <= 0)
                                                     <li class="dz-price flex-1">Rp. ***.***</li>
                                                     <li>
-                                                        <a href="#" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
+                                                        <a href="{{ route('pesanan.paymentOrder', $dikemas['penerima']['noPesanan']) }}" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
                                                     </li>
                                                 @else
                                                     <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $dikemas['penerima']['ongkir'] - $dikemas['penerima']['voucher'] - $dikemas['penerima']['kodeunik']), 0, ".", ".") }} </li>
                                                     <li>
-                                                        <a href="#" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Pembayaran diterima</a>
+                                                        <a href="{{ route('pesanan.paymentOrder', $dikemas['penerima']['noPesanan']) }}" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Pembayaran diterima</a>
                                                     </li>
                                                 @endif
                                             </ul>
@@ -127,6 +130,9 @@
 						<ul class="featured-list">
                             @if(!empty($pesanans['dikirim']))
                                 @foreach($pesanans['dikirim'] as $dikirim)
+                                @php
+                                    $subtotal = 0;
+                                @endphp
                                 <li>
                                     <div class="dz-card list">
                                         <div class="dz-content">
@@ -177,6 +183,9 @@
 						<ul class="featured-list">
                             @if(!empty($pesanans['selesai']))
                                 @foreach($pesanans['selesai'] as $selesai)
+                                @php
+                                    $subtotal = 0;
+                                @endphp
                                 <li>
                                     <div class="dz-card list">
                                         <div class="dz-content">

@@ -96,24 +96,30 @@
     {{-- <a href="{{ route('home.news') }}">More</a> --}}
 </div>
 
-{{-- <ul class="featured-list">
+<ul class="featured-list">
+    @foreach($beritas['data'] as $brt)
+    @php
+        $media = WordPress::media()->find($brt['featured_media']);
+        @endphp
     <li>
         <div class="dz-card list">
             <div class="dz-media">
-                <a href="product-detail.html"><img src="{!! theme_asset('img/products/product1.jpg') !!}" alt=""></a>
+                <a href="{{ $brt['link'] }}"><img src="{{ $media['source_url']}}" alt=""></a>
             </div>
             <div class="dz-content">
                 <div class="dz-head">
-                    <h6 class="title"><a href="product-detail.html">judul berita</a></h6>
-                    <span class="dz-text">Deskripsi berita</span>
+                    <h6 class="title"><a href="{{ $brt['link'] }}">{{ $brt['title']['rendered'] }}</a></h6>
+                    <span class="dz-text">{{ \Illuminate\Support\Str::words(strip_tags($brt['excerpt']['rendered']), 20) }}</span>
                 </div>
                 <ul class="dz-meta">
-                    <li class="dz-price flex-1"><small>23 Maret 2024</small></li>
-                    <li class="dz-pts">50 Pts</li>
+                    <li class="dz-price flex-1"><small>{{ $brt['date'] }}</small></li>
+                    {{-- <li class="dz-pts"></li> --}}
                 </ul>
             </div>
         </div>
     </li>
-</ul> --}}
+    @endforeach
+</ul>
+{{-- {{ dd($beritas) }} --}}
 <!-- News -->
 @endsection

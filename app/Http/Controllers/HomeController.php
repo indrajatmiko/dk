@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use LukePOLO\LaraCart\Facades\LaraCart;
+use RickWest\WordPress\Facades\WordPress;
 
 use App\Models\Wilayah;
 use App\Models\Reseller;
@@ -35,6 +36,7 @@ class HomeController extends Controller
 
         $wilayahReseller = array();
         $wilayahs = Wilayah::orderBy('id')->get();
+
         foreach ($wilayahs as $key => $value) {
             $resellers = Reseller::where('idWilayah', $value->id)->get();
 
@@ -49,8 +51,9 @@ class HomeController extends Controller
         }
 
         $produks = Produk::orderBy('id')->get();
+        $beritas = WordPress::posts()->get();
 
-        return view('home', compact('wilayahs', 'wilayahReseller', 'sesIdReseller', 'sesNamaReseller', 'sesKotaKab', 'sesKecamatan', 'produks'));
+        return view('home', compact('wilayahs', 'wilayahReseller', 'sesIdReseller', 'sesNamaReseller', 'sesKotaKab', 'sesKecamatan', 'produks', 'beritas'));
     }
 
     public function produk($idProduk)
