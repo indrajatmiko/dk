@@ -26,7 +26,7 @@
     /></noscript>
 <!-- End Meta Pixel Code -->
 
-@if(request()->segment(1) === 'home')
+@if(request()->segment(1) === '' OR request()->segment(1) === 'home')
     <script src="{!! theme_asset('index.js') !!}"></script>
 @endif
 
