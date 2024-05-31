@@ -51,9 +51,9 @@ class HomeController extends Controller
         }
 
         $produks = Produk::orderBy('id')->get();
-        $beritas = WordPress::posts()->get();
+        // $beritas = WordPress::posts()->get();
 
-        return view('home', compact('wilayahs', 'wilayahReseller', 'sesIdReseller', 'sesNamaReseller', 'sesKotaKab', 'sesKecamatan', 'produks', 'beritas'));
+        return view('home', compact('wilayahs', 'wilayahReseller', 'sesIdReseller', 'sesNamaReseller', 'sesKotaKab', 'sesKecamatan', 'produks'));
     }
 
     public function produk($idProduk)

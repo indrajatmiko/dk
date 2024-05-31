@@ -91,12 +91,12 @@
 <!-- Overlay Card -->
 
 <!-- News -->
-<div class="title-bar">
-    <h5 class="title">Berita Terbaru</h5>
+{{-- <div class="title-bar"> --}}
+    {{-- <h5 class="title">Berita Terbaru</h5> --}}
     {{-- <a href="{{ route('home.news') }}">More</a> --}}
-</div>
+{{-- </div> --}}
 
-<ul class="featured-list">
+{{-- <ul class="featured-list">
     @foreach($beritas['data'] as $brt)
     @php
         $media = WordPress::media()->find($brt['featured_media']);
@@ -112,14 +112,14 @@
                     <span class="dz-text">{{ \Illuminate\Support\Str::words(strip_tags($brt['excerpt']['rendered']), 20) }}</span>
                 </div>
                 <ul class="dz-meta">
-                    <li class="dz-price flex-1"><small>{{ $brt['date'] }}</small></li>
+                    <li class="dz-price flex-1"><small>{{ $brt['date'] }}</small></li> --}}
                     {{-- <li class="dz-pts"></li> --}}
-                </ul>
+                {{-- </ul>
             </div>
         </div>
     </li>
     @endforeach
-</ul>
+</ul> --}}
 {{-- {{ dd($beritas) }} --}}
 <!-- News -->
 @endsection

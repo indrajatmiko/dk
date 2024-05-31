@@ -7,16 +7,16 @@
 			<div class="default-tab style-2">
 				<ul class="nav nav-tabs" role="tablist">
 					<li class="nav-item" role="presentation">
-						<a class="nav-link active" data-bs-toggle="tab" href="#unpaid" aria-selected="true" role="tab">Belum Bayar</a>
+						<a class="nav-link active" data-bs-toggle="tab" href="#unpaid" aria-selected="true" role="tab">Belum Bayar @if(isset($pesanans['unpaid'])) (@php echo count($pesanans['unpaid']) @endphp) @endif</a>
 					</li>
 					<li class="nav-item" role="presentation">
-						<a class="nav-link" data-bs-toggle="tab" href="#dikemas" aria-selected="false" role="tab" tabindex="-1">Dikemas</a>
+						<a class="nav-link" data-bs-toggle="tab" href="#dikemas" aria-selected="false" role="tab" tabindex="-1">Dikemas @if(isset($pesanans['dikemas'])) (@php echo count($pesanans['dikemas']) @endphp) @endif</a>
 					</li>
 					<li class="nav-item" role="presentation">
-						<a class="nav-link" data-bs-toggle="tab" href="#dikirim" aria-selected="false" role="tab" tabindex="-1">Dikirim</a>
+						<a class="nav-link" data-bs-toggle="tab" href="#dikirim" aria-selected="false" role="tab" tabindex="-1">Dikirim @if(isset($pesanans['dikirim'])) (@php echo count($pesanans['dikirim']) @endphp) @endif</a>
 					</li>
 					<li class="nav-item" role="presentation">
-						<a class="nav-link" data-bs-toggle="tab" href="#selesai" aria-selected="false" role="tab" tabindex="-1">Selesai</a>
+						<a class="nav-link" data-bs-toggle="tab" href="#selesai" aria-selected="false" role="tab" tabindex="-1">Selesai @if(isset($pesanans['selesai'])) (@php echo count($pesanans['selesai']) @endphp) @endif</a>
 					</li>
 				</ul>
 				<div class="tab-content" style="margin-top: 7rem;">
@@ -158,12 +158,12 @@
                                                 @if($dikirim['penerima']['ongkir'] <= 0)
                                                     <li class="dz-price flex-1">Rp. ***.***</li>
                                                     <li>
-                                                        <a href="#" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
+                                                        <a href="{{ route('pesanan.paymentOrder', $dikirim['penerima']['noPesanan']) }}" class="btn btn-warning btn-xs font-13 btn-thin rounded-xl disabled">Mohon tunggu</a>
                                                     </li>
                                                 @else
                                                     <li class="dz-price flex-1">Rp. {{ number_format(($subtotal + $dikirim['penerima']['ongkir'] - $dikirim['penerima']['voucher'] - $dikirim['penerima']['kodeunik']), 0, ".", ".") }} </li>
                                                     <li>
-                                                        <a href="#" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Lacak</a>
+                                                        <a href="{{ route('pesanan.paymentOrder', $dikirim['penerima']['noPesanan']) }}" class="btn btn-primary btn-xs font-13 btn-thin rounded-xl">Lacak</a>
                                                     </li>
                                                 @endif
                                             </ul>
